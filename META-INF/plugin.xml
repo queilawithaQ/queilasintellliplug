@@ -1,0 +1,51 @@
+<idea-plugin version="2">
+  <id>com.paperetto.dash</id>
+  <name>Dash</name>
+  <version>3.0.1</version>
+  <vendor url="https://github.com/gdelmas/IntelliJDashPlugin">Gerard Delmàs</vendor>
+
+  <description><![CDATA[
+Launches Dash with the word under the caret or the selected text.<br />
+The default shortcut assigned in the plugin is Mac-Shift-D.<br />
+<br />
+Dash is a Mac OSX utility that can be obtained <a href="http://kapeli.com/dash">here</a>.<br />
+<br />
+The plugin will identify the currently used programming language through context and request filtered search results accordingly.
+    ]]></description>
+
+  <change-notes><![CDATA[
+3.0.1 Fixed missing Ruby context recognition<br />
+3.0   Added Context aware search<br />
+2.2   Compatibility and stability fixes<br />
+2.1   Added Ruby syntax support, stability fixes<br />
+2.0   Added Dash docset keyword support<br />
+]]>
+  </change-notes>
+
+  <!-- please see http://confluence.jetbrains.net/display/IDEADEV/Build+Number+Ranges for description -->
+  <idea-version since-build="123.72"/>
+
+  <!-- please see http://confluence.jetbrains.net/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
+       on how to target different products -->
+  <depends>com.intellij.modules.lang</depends>
+
+  <application-components>
+    <!-- Add your application components here -->
+  </application-components>
+
+  <project-components>
+    <!-- Add your project components here -->
+  </project-components>
+
+  <actions>
+    <!-- Add your actions here -->
+      <action id="DashLauncherAction" class="de.dreamlab.dash.DashLauncherAction" text="Search in Dash" description="Searches word under caret in Dash">
+          <add-to-group group-id="ToolsMenu" anchor="last"/>
+          <keyboard-shortcut keymap="$default" first-keystroke="ctrl shift D"/>
+      </action>
+  </actions>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+</idea-plugin>
